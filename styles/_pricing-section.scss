@@ -1,0 +1,84 @@
+@import "mixins";
+
+.section__pricing {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  &--des {
+    text-align: center;
+    max-width: 50rem;
+    h4 {
+      font-size: 3.5rem;
+      font-weight: 500;
+    }
+    p {
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
+  }
+  &--boxs {
+    display: flex;
+    gap: 5rem;
+    margin-top: 5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    .boxs-box {
+      padding: 5rem;
+      border: 0.2rem solid #dddddd;
+      border-radius: 1rem;
+      display: flex;
+      flex-direction: column;
+      place-items: center;
+      text-align: center;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        border-color: #f53838;
+        .button {
+          color: white;
+          background-color: #f53838;
+          transition: all 0.5s ease-in-out;
+        }
+      }
+      h4 {
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin: 3rem 0;
+      }
+      ul {
+        height: 38rem;
+        li {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          margin-bottom: 2rem;
+        }
+      }
+      .price {
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: black;
+        span {
+          color: var(--secondary-text);
+        }
+      }
+      .button {
+        font-size: 1.6rem;
+        color: #f53838;
+        border: 0.2rem solid #f53838;
+        border-radius: 5rem;
+        padding: 1rem 8rem;
+        margin-top: 3rem;
+      }
+    }
+    @include mobile {
+      flex-direction: column;
+      .boxs-box {
+        img {
+          max-width: 25rem;
+        }
+      }
+    }
+  }
+}

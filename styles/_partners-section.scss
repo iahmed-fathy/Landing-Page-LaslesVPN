@@ -1,0 +1,40 @@
+@import "mixins";
+
+.partners__section {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  &--des {
+    text-align: center;
+    max-width: 50rem;
+  }
+  &--main-img {
+    margin: 6rem 0 3rem;
+    transition: all 0.5s ease-in-out;
+    @include mobile {
+      max-width: 40rem;
+    }
+    @include tablet {
+      max-width: 80rem;
+    }
+  }
+  &--box-imgs {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .box-img {
+      max-width: 20rem;
+      transition: all 0.5s ease-in-out;
+      &:hover {
+        scale: 1.2;
+      }
+      @include mobile {
+        max-width: 8rem;
+      }
+      @include tablet {
+        max-width: 15rem;
+      }
+    }
+  }
+}

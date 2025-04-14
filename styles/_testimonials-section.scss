@@ -1,0 +1,143 @@
+@import "mixins";
+
+.testimonials__section {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  &--des {
+    max-width: 50rem;
+    text-align: center;
+  }
+  &--boxs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 6rem;
+    width: 100%;
+    gap: 2rem;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+    .testimonial-box {
+      width: 33rem;
+      height: 23rem;
+      border: 0.2rem solid #dddddd;
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.5s ease-in-out;
+      &:hover {
+        border-color: #f53838;
+        scale: 1.1;
+      }
+      @include mobile {
+        width: 35rem;
+        height: auto;
+      }
+      div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        align-items: center;
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          .user-inf {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            h6 {
+              font-size: 1.8rem;
+              font-weight: 500;
+            }
+            p {
+              font-size: 1.6rem;
+              font-weight: 400;
+            }
+          }
+        }
+        .ecaluation {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+      }
+    }
+    p {
+      line-height: 1.4;
+    }
+  }
+  &--scroll {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 5rem;
+    .scroll-cercles {
+      display: flex;
+      gap: 1rem;
+      .scroll-cercle {
+        cursor: pointer;
+        width: 1rem;
+        height: 1rem;
+        background-color: #dde0e4;
+        border-radius: 50%;
+        &:hover {
+          background-color: #f53838;
+        }
+        &:first-child {
+          border-radius: 30%;
+          background-color: #f53838;
+          width: 3rem;
+        }
+      }
+    }
+    .scroll-rows {
+      display: flex;
+      gap: 2rem;
+      .scroll-row {
+        color: #f53838;
+        font-size: 3rem;
+        padding: 0.5rem;
+        border: 0.4rem solid #f53838;
+        border-radius: 50%;
+        cursor: pointer;
+        &:hover {
+          color: white;
+          background-color: #f53838;
+        }
+      }
+    }
+  }
+}
+
+.subscribe__section {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1rem;
+  box-shadow: 0 0 0.5rem var(--secondary-text);
+  padding: 5rem;
+  margin-top: 5rem;
+  @include mobile {
+    text-align: center;
+    flex-direction: column;
+    gap: 5rem;
+  }
+  &--des {
+    max-width: 50rem;
+  }
+  &--btn {
+    color: var(--white);
+    background-color: #f53838;
+    width: 20rem;
+    padding: 1.8rem;
+    border-radius: 1rem;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-align: center;
+    transition: all 0.5s ease-in-out;
+  }
+}

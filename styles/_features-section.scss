@@ -1,0 +1,54 @@
+@import "mixins";
+
+.section__features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 3rem;
+  place-items: center;
+  &--imgs {
+    img {
+      max-width: 50rem;
+    }
+  }
+  &--des {
+    p {
+      margin-bottom: 3rem;
+    }
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        p {
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
+  @include mobile {
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+    &--des {
+      margin: 3rem;
+    }
+
+    &--img {
+      img {
+        max-width: 40rem;
+      }
+      margin-top: 5rem;
+    }
+  }
+  @include tablet {
+    grid-template-columns: 1fr;
+    &--des {
+      margin: 3rem;
+    }
+    &--imgs {
+      img {
+        max-width: 60rem;
+      }
+      margin-top: 5rem;
+    }
+  }
+}

@@ -1,0 +1,93 @@
+@import "mixins";
+
+.header__navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 5rem;
+  right: 5rem;
+  &::after {
+    content: "";
+    width: 100vw;
+    position: absolute;
+    background-color: white;
+    height: 11rem;
+    border-bottom: 5px solid #f53838;
+    z-index: -1;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  top: 2rem;
+  &--logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .logo-title {
+      font-size: 2rem;
+      font-weight: 500;
+    }
+  }
+  &--mainnav {
+    .nav-links {
+      display: flex;
+      color: var(--fbc-secondary-text);
+      font-size: 1.6rem;
+      font-weight: 400;
+      gap: 3rem;
+      justify-content: space-between;
+      .nav-link {
+        transition: all 0.5s ease-in-out;
+        &:hover {
+          text-decoration: underline;
+          text-underline-offset: 0.5rem;
+          color: #f53838;
+        }
+      }
+    }
+  }
+  &--login {
+    .sign-in {
+      font-size: 1.6rem;
+      font-weight: 500;
+      transition: all 0.5s ease-in-out;
+    }
+    .sign-up {
+      margin-left: 2rem;
+      color: #f53855;
+      border: 0.1rem solid #f53855;
+      padding: 1rem 3rem;
+      border-radius: 2rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      transition: all 0.5s ease-in-out;
+
+      &:hover {
+        background-color: #f53855;
+        color: white;
+      }
+    }
+  }
+  @include mobile {
+    &::after {
+      content: "";
+      height: 17rem;
+    }
+
+    &--logo {
+      order: 1;
+    }
+    &--mainnav {
+      order: 3;
+      margin-top: 2rem;
+      justify-content: space-between;
+      width: 100%;
+    }
+    &--login {
+      order: 2;
+    }
+  }
+}
